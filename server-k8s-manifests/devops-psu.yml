@@ -19,11 +19,11 @@ spec:
         release-date: RELEASE-DATE
     spec:
       containers:
-        - name: devops-psu-server
-          image: <ваш-логин>/devops-psu:latest
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 8000
+      - name: devops-psu-server
+        image: fin1kk/orlov-devops-psu:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
 ---
 apiVersion: v1
 kind: Service
@@ -38,7 +38,7 @@ spec:
     app: devops-psu
     svc: frontend
   ports:
-    - port: 12345
-      targetPort: 8000
+  - port: 12345
+    targetPort: 8000
   externalIPs:
-    - 10.0.2.15
+  - 10.0.2.15
